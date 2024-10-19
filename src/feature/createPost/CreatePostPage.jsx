@@ -200,7 +200,7 @@ const DeleteButton = styled.button`
 
 const ToolTab = styled.div`
   display: flex;
-  width: 100%;
+  width: calc(100% - 40px);
   height: 74px;
   padding: 10px 20px 0px 20px;
   gap: 12px;

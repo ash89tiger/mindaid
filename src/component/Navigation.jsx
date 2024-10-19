@@ -14,7 +14,7 @@ import mypageIconActive from "../images/mypage_.png"; // 활성화된 mypage 아
 
 // 스타일
 const NavigationFrame = styled.div`
-  width: 100%;
+  width: calc(100% - 40px);
   display: flex;
   justify-content: space-between;
   position: fixed;
