@@ -82,7 +82,6 @@ const BlueBar = styled.div`
   background-color: #3182f7;
   transition: transform 0.3s;
   transform: ${(props) => (props.active ? "translateX(0)" : "translateX(100%)")};
-  z-index: -1;
 `;
 
 const PostContentInput = styled.textarea`
