@@ -20,7 +20,7 @@ import userIcon from "../../images/user.jpg";
 
 // styled components
 const Wrapper = styled.div`
-  width: 100%;
+  width: calc(100% - 40px);
   height: calc(100vh);
   margin-top: 48px;
   background-color:#fff;

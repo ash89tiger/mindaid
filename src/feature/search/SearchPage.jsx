@@ -19,7 +19,7 @@ import searchIcon from "../../images/search__.png";
 
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: calc(100% - 40px);
   height: calc(100vh);
   margin-top: 64px;
   /* padding: 0px 20px ; */

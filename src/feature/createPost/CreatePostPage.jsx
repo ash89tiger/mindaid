@@ -16,7 +16,7 @@ const endpoint = "https://api.openai.com/v1/chat/completions";
 
 // 스타일 컴포넌트
 const Wrapper = styled.div`
-  width: 100%;
+  width: calc(100% - 40px);
   height: calc(100vh);
   padding: 0px;
   margin: 0px;
