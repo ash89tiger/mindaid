@@ -19,9 +19,9 @@ import searchIcon from "../../images/search__.png";
 
 
 const Wrapper = styled.div`
-  width: calc(100% - 40px);
-  height: calc(100vh);
-  margin-top: 64px;
+  width: calc(100%);
+  height: calc(100%);
+  padding-top: 64px;
   /* padding: 0px 20px ; */
   background-color:#fff;
 `;
@@ -36,7 +36,7 @@ const SearchContainer = styled.div`
   margin: auto;
   width: calc(100% - 40px);
   /* margin-bottom: 12px; */
-  margin: 0px 20px 12px 20px;
+  margin: 0px 20px 20px 20px;
 `;
 
 const SearchText = styled.div`

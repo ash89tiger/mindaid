@@ -6,9 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: auto;
-  width: 100vw;
-  height:100vh;
+  margin: 0;
+  width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
   /* background-color: #ccc; */
   overflow: scroll;
 }

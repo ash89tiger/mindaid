@@ -10,9 +10,10 @@ import battery from "../images/battery.png"
 
 //style
 const Wrapper = styled.div`
-    width: calc(100% - 40px);
+    width: calc(100%);
     height: 48px;
     padding: 0px 20px;
+    margin:auto;
     background:white;
 
     display:flex;

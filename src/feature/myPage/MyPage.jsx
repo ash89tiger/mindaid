@@ -20,9 +20,9 @@ import userIcon from "../../images/user.jpg";
 
 // styled components
 const Wrapper = styled.div`
-  width: calc(100% - 40px);
-  height: calc(100vh);
-  margin-top: 48px;
+  width: calc(100%);
+  height: calc(100%);
+  padding-top: 48px;
   background-color:#fff;
 
 `;

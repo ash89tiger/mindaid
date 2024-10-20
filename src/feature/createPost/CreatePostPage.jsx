@@ -16,8 +16,8 @@ const endpoint = "https://api.openai.com/v1/chat/completions";
 
 // 스타일 컴포넌트
 const Wrapper = styled.div`
-  width: calc(100% - 40px);
-  height: calc(100vh);
+  width: calc(100%);
+  /* height: calc(100%); */
   padding: 0px;
   margin: 0px;
   display: flex;
@@ -199,7 +199,7 @@ const DeleteButton = styled.button`
 
 const ToolTab = styled.div`
   display: flex;
-  width: calc(100% - 40px);
+  width: calc(100%);
   height: 74px;
   padding: 10px 20px 0px 20px;
   gap: 12px;
@@ -254,22 +254,36 @@ const WriteButton = styled(Button)`
 
 // GPT API 호출 함수
 const callGPT = async (prompt, setTitle) => {
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-4",
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4",
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
 
-  const data = await response.json();
-  const generatedTitle = data.choices[0].message.content.trim();
-  setTitle(generatedTitle);
+    const data = await response.json();
+
+    // 응답 데이터에 대한 유효성 검사
+    if (data && data.choices && data.choices.length > 0 && data.choices[0].message) {
+      const generatedTitle = data.choices[0].message.content?.trim();
+      setTitle(generatedTitle);
+    } else {
+      // 응답이 예상과 다를 때 기본 값 또는 에러 처리
+      console.error("응답 데이터에 문제가 있습니다:", data);
+      setTitle("제목 생성 실패");
+    }
+  } catch (error) {
+    console.error("GPT API 호출 중 오류 발생:", error);
+    setTitle("제목 생성 중 오류 발생");
+  }
 };
+
 
 function handleInput(e) {
   e.target.style.height = "auto";
@@ -352,6 +366,7 @@ function CreatePostPage() {
 
   const handleGenerateTitle = () => {
     if (content) {
+      
       callGPT(
         `다음 내용을 본문에 사용된 언어를 사용하여 띄어쓰기를 포함하여 20 글자보다 적은 하나의 문장으로 요약해줘: ${content}`,
         setTitle

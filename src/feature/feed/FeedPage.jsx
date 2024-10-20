@@ -15,11 +15,11 @@ import userIcon from "../../images/user.jpg";
 
 
 const Wrapper = styled.div`
-  width: 100%;
-  max-height: 898px;
-  margin: 48px 0px 0px 0px;
+  width: calc(100%);
+  /* max-height: 898px; */
+  padding: 48px 0px 0px 0px;
   background-color:#fff;
-
+  margin: auto;
 `;
 
 const Logo = styled.img`
@@ -30,8 +30,9 @@ const Logo = styled.img`
 `;
 
 const PostContainer = styled.div`
-  width: calc(100% - 40px);
-  margin: 0px 20px;
+  width: calc(100%);
+  padding : 0px 20px;
+  margin: auto;
 `;
 
 const PostItemWrapper = styled.div`
